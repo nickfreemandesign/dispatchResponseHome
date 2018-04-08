@@ -285,7 +285,7 @@ section.about{
 
 .about-container{
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -740,6 +740,15 @@ i {
   cursor: pointer;
   letter-spacing: 2px;
   box-shadow: 3px -3px 1em gainsboro, -3px -3px 1em gainsboro;
+}
+
+@keyframes fillIt{
+  0%: {
+    opacity: 0;
+  }
+  100%: {
+    opacity: 1;
+  }
 }
 
 

@@ -36,7 +36,7 @@
               var imgContainer = $(".aag-img");
               var step1 = '<li id="launch-txt-1">RECEIVE TEXT FROM DISPATCH</li>';
               var step2 = '<li id="launch-txt-2">SELECT THE TEXT MESSAGE LINK</li>';
-              var step3 = '<li id="launch-txt-3">GET DISPATCH INTEL</li>';
+              var step3 = '<li id="launch-txt-3">GET DISPATCH INTEL AND MAPPING</li>';
               var step4 = '<div id="get-going">GET MOVING</div>';
               var replay = ['<div id="replay-btn">',
                               '<svg class="replay-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"',
