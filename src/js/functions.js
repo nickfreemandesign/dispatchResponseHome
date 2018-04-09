@@ -12,22 +12,6 @@
 
 
 
-    $(".main").onepage_scroll({
-       sectionContainer: "section",
-       easing: "ease",
-
-       animationTime: 1000,
-       pagination: true,
-       updateURL: false,
-       beforeMove: function(index) {
-
-
-       },
-       afterMove: function(index) {
-
-          if (index === 3) {
-
-            if (!hasRun3) {
 
               window.hasRun3 = true;
 
@@ -141,39 +125,18 @@
                  $("#launch-img-4").fadeIn(500);
                  $("#launch-img-3").animate({ opacity: 0 }, { duration: 600, queue: false });
                }
-           }//end if
 
-         } else if ( index === 4){
 
-            if (!hasRun4) {
 
-              window.hasRun4 = true;
                 $('.txt-app>img').animate({ opacity: 1 }, { duration: 500, queue: false });
                 $('.txt-app>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
-            }
 
-          } else if ( index === 5){
-              if (!hasRun5) {
+
+
 
                 window.hasRun5 = true;
                 $('.gps>.title>.heading').animate({ opacity: 1 }, { duration: 500, queue: false });
                 $('.gps>.title>.heading').animate({ paddingLeft: "0px" }, { duration: 500, queue: false });
-              }
-          } else if ( index === 2){
-                // other body logic
-          } else if ( index === 2){
-                // other body logic
-          } else if ( index === 2){
-                // other body logic
-          }
 
-       },
-       loop: false,
-       keyboard: true,
-       responsiveFallback: false,
-
-
-       direction: "vertical"
-    });
 
   })

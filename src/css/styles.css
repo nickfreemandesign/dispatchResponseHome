@@ -1,26 +1,11 @@
-.imaclass{
-  stroke-dasharray: 100;
-  animation: dash 5s linear;
-}
-
 
 .cta{
   background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   width: 100vw;
-  flex-direction: column;
-}
-
-.cta > img {
-  width: 100%;
-}
-
-@media only screen and (max-width: 600px){
-  .cta > img {
-    margin-top: -50%;
-  }
+  height: 100vh;
 }
 
 .pls-rotate{
@@ -28,6 +13,13 @@
   font-family: 'Source Sans Pro', monospace;
   margin-top: 20%;
   font-size: 1.2em;
+}
+
+svg#logo{
+  grid-area: 1/1/2/2;
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 @media screen
@@ -50,6 +42,10 @@
 
 }
 
+.at-a-glance{
+  width: 100vw;
+  height: 100vh;
+}
 
 .aag-container{
   grid-area: smpl;
@@ -61,7 +57,7 @@
   margin: 5%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .aag-container{
     grid-area: smpl;
     display: grid;
@@ -76,6 +72,7 @@
 
 .aag-card{
   grid-area: aag;
+  z-index: 10;
   margin: 10% auto;
   width: 100vw;
   border-radius: 15px;
@@ -112,7 +109,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .aag-card{
     max-height: 100%;
     margin-top: 2%;
@@ -140,31 +137,31 @@ padding-left: 10%;
 #launch-img-0{
   position: absolute;
   z-index: 1;
-  height: 100%;
+  height: 80%;
 }
 #launch-img-1{
   position: absolute;
   z-index: 2;
   display: none;
-  height: 100%;
+  height: 80%;
 }
 #launch-img-2{
   position: absolute;
   z-index: 3;
   display: none;
-  height: 100%;
+  height: 80%;
 }
 #launch-img-3{
   position: absolute;
   z-index: 4;
   display: none;
-  height: 100%;
+  height: 80%;
 }
 #launch-img-4{
   position: absolute;
   z-index: 5;
   display: none;
-  height: 100%;
+  height: 80%;
 }
 #replay-btn {
   display: none;
@@ -193,10 +190,11 @@ padding-left: 10%;
   transition: transform .5s ease-in-out;
 }
 
-@media only screen and (max-width: 600px) {
-  #launch-img-1, #launch-img-2, #launch-img-3 {
+@media only screen and (max-width: 800px) {
+  #launch-img-0, #launch-img-1, #launch-img-2, #launch-img-3, #launch-img-4 {
     height: 40%;
   }
+
 }
 
 #get-going{
@@ -231,7 +229,6 @@ rect.ima-rect{
   height: 30px;
   display: flex;
   justify-content: center;
-  /* text-align: center; */
   transform: translateY(-80px);
   padding: 10px;
   animation: 2s infinite alternate upDown;
@@ -524,6 +521,12 @@ i {
   height: 11em;
 }
 
+@media only screen and (max-width: 800px) {
+  .features-container > .heading{
+    height: 16em;
+  }
+}
+
 .features-container > .heading > p:first-child{
   font-family: 'podkova', monospace;
   /* font-weight: bold; */
@@ -553,6 +556,8 @@ i {
 
 .gps{
   grid-area: tem;
+  width: 100vw;
+  height: 100vh;
   background-color: white;
   display: grid;
   grid-gap: 10%;
@@ -560,7 +565,7 @@ i {
   grid-template-areas: '.. img head ..';
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .gps{
     grid-template-rows: 2fr 3fr;
     grid-gap: 0%;
@@ -612,7 +617,7 @@ i {
 
 .find-out-more{
   display: flex;
-  height: 85vh;
+  height: 100vh;
   width: 100vw;
   justify-content: space-around;
   align-items: center;
@@ -635,7 +640,7 @@ i {
   box-shadow: 3px -3px 1em gainsboro, -3px -3px 1em gainsboro;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .find-out-more{
     display: flex;
     flex-direction: column;
