@@ -1,11 +1,5 @@
   $(document).ready(function(){
 
-        $(".cta>.arrow").delay(2500)
-              .queue(function (next) {
-                $(this).css('color', 'black');
-                next();
-              });
-
     window.hasRun1 = false;
     window.hasRun2 = false;
     window.hasRun3 = false;
@@ -87,7 +81,7 @@ getScrollTop()
               function runEmoji(){
                 window.hasRun2 = true;
                 var wait = 200;
-                let emoj = $(".about-emoji").children();
+                var emoj = $(".about-emoji").children();
                 $(".about-desc").fadeIn();
                 for (var i in emoj) {
                   var type = Object.prototype.toString.call(emoj[i]);
@@ -233,19 +227,23 @@ getScrollTop()
                // END ANIMATION FOR SECTION 3
 
                // BEGIN ANIMATION FOR SECTION 4
-               // END ANIMATION FOR SECTION 4
 
                function runSection4() {
                  window.hasRun4 = true;
                   $('.txt-app>img').animate({ opacity: 1 }, { duration: 500, queue: false });
                   $('.txt-app>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
                 }
+                // END ANIMATION FOR SECTION 4
+
+                // BEGIN ANIMATION FOR SECTION 5
 
                function runSection5() {
                  window.hasRun5 = true;
                  $('.gps>.title>.heading').animate({ opacity: 1 }, { duration: 500, queue: false });
                  $('.gps>.title>.heading').animate({ paddingLeft: "0px" }, { duration: 500, queue: false });
                }
+               // END ANIMATION FOR SECTION 5
+               // BEGIN ANIMATION FOR SECTION 6
 
                function runSection6() {
                  window.hasRun6 = true;
@@ -253,6 +251,7 @@ getScrollTop()
                  $('.fom-img>img').animate({ opacity: 1 }, { duration: 500, queue: false });
                  $('.fom-img>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
                }
+               // END ANIMATION FOR SECTION 6
 
 
 
