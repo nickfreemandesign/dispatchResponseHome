@@ -1,4 +1,16 @@
 
+
+path#outer-ring{
+  opacity: 0;
+}
+path#middle-ring{
+  opacity: 0;
+}
+path#inner-ring{
+  opacity: 0;
+}
+
+
 .cta{
   background-color: white;
   display: grid;
@@ -259,9 +271,10 @@ rect.ima-rect{
   align-items: center;
   flex-flow: row-reverse;
   height: 65px;
+  margin-top: -15px;
   background-color: white;
   font-family: 'Anonymous Pro', monospace;
-  z-index: 5;
+  z-index: 15;
 }
 
 .nav > li {
@@ -361,8 +374,6 @@ section.about{
 }
 
 
-
-
 .arrow1 {
 }
 
@@ -393,15 +404,20 @@ section.about{
   grid-area: 5/1/6/2;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
 }
 
 .fire{
   text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .house{
   text-align: left;
+  display: flex;
+  align-items: flex-end;
 }
 
 .emergency{
@@ -523,7 +539,7 @@ i {
 
 @media only screen and (max-width: 800px) {
   .features-container > .heading{
-    height: 16em;
+    height: 18em;
   }
 }
 
@@ -629,6 +645,8 @@ i {
 
 .fom-img > img{
   max-width: 80%;
+  opacity: 0;
+  padding-top: 30px;
 }
 
 .fom-card{
@@ -638,6 +656,7 @@ i {
   height: auto;
   text-align: center;
   box-shadow: 3px -3px 1em gainsboro, -3px -3px 1em gainsboro;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 800px) {

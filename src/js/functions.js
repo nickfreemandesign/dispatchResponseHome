@@ -6,14 +6,110 @@
                 next();
               });
 
+    window.hasRun1 = false;
+    window.hasRun2 = false;
     window.hasRun3 = false;
     window.hasRun4 = false;
     window.hasRun5 = false;
+    window.hasRun6 = false;
+
+    var section1 = $("section.cta").offset().to - 200;
+    var section2 = $("section.about").offset().top;
+    var section3 = $("section.at-a-glance").offset().top - 200;
+    var section4 = $("section.features").offset().top - 200;
+    var section5 = $("section.gps").offset().top - 200;
+    var section6 = $("section.find-out-more").offset().top - 200;
+
+function getScrollTop() {
+  var cp = $(document).scrollTop(); //cp is current position
+
+  if (cp < section2)        {
+    if (!window.hasRun1) {
+      setTimeout(runLogo, 800);
+    }
+  } else if (cp > section2 && cp < section3) {
+    if (!window.hasRun2){
+      runEmoji();
+    }
+  } else if (cp > section3 && cp < section4) {
+    if (!window.hasRun3) {
+      runSection3();
+    }
+  } else if (cp > section4 && cp < section5) {
+    if (!window.hasRun4) {
+      runSection4();
+    }
+  } else if (cp > section5 && cp < section6) {
+    if (!window.hasRun5) {
+      runSection5();
+    }
+  } else if (cp > section6) {
+    if (!window.hasRun6) {
+      runSection6();
+    }
+  }
+  setTimeout(getScrollTop,100);
+}
+
+
+getScrollTop()
 
 
 
 
-              window.hasRun3 = true;
+              // BEGIN ANIMATION FOR SECTION 1
+
+              function runLogo() {
+                window.hasRun1 = true;
+                showRings("path#inner-ring", 200);
+                showRings("path#middle-ring", 400);
+                showRings("path#outer-ring", 600);
+              }
+
+              function showRings(ring, wait){
+                setTimeout(function(){
+                  console.log(ring)
+                  $(ring).animate({ opacity: 1 }, { duration: 500, queue: false });
+                },wait)
+              }
+
+              // END ANIMATION FOR SECTION 1
+
+              // BEGIN ANIMATION FOR SECTION 2
+
+              $(".e-dispatch").hide();
+              $(".e-arrow-l").hide();
+              $(".e-first-resp").hide();
+              $(".e-arrow-r").hide();
+              $(".e-emerg").hide();
+              $(".about-desc").hide();
+
+              function runEmoji(){
+                window.hasRun2 = true;
+                var wait = 200;
+                let emoj = $(".about-emoji").children();
+                $(".about-desc").fadeIn();
+                for (var i in emoj) {
+                  var type = Object.prototype.toString.call(emoj[i]);
+                  if (type === '[object HTMLDivElement]') {
+                    showEmoji(emoj[i].className, wait + (i * 200))
+                  }
+
+                }
+              }
+
+              function showEmoji(emoj, wait, last){
+                setTimeout(function(){
+                  $('.'+emoj).fadeIn();
+                },wait)
+              }
+
+
+              // END ANIMATION FOR SECTION 2
+
+
+
+              // BEGIN ANIMATION FOR SECTION 3
 
               var launchImg = $("#launch");
               var list = $("ol.aag-desc");
@@ -41,13 +137,21 @@
 
                list.empty();
 
-               //append img 0
                imgContainer.append(img0)
                imgContainer.append(img1).hide().fadeIn();
                imgContainer.append(img2).hide().fadeIn();
                imgContainer.append(img4).hide().fadeIn();
+               $(".aag-img").hide();
+               $(".aag-card").hide();
+               $("#launch-img-0").hide()
 
-               setTimeout(runTxt1, 1000);
+               function runSection3() {
+                 window.hasRun3 = true;
+                 $(".aag-img").fadeIn();
+                 $(".aag-card").fadeIn();
+                 $("#launch-img-0").fadeIn();
+                 setTimeout(runTxt1, 1000);
+               }
 
                function restart() {
                  list.empty();
@@ -126,17 +230,32 @@
                  $("#launch-img-3").animate({ opacity: 0 }, { duration: 600, queue: false });
                }
 
+               // END ANIMATION FOR SECTION 3
+
+               // BEGIN ANIMATION FOR SECTION 4
+               // END ANIMATION FOR SECTION 4
+
+               function runSection4() {
+                 window.hasRun4 = true;
+                  $('.txt-app>img').animate({ opacity: 1 }, { duration: 500, queue: false });
+                  $('.txt-app>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
+                }
+
+               function runSection5() {
+                 window.hasRun5 = true;
+                 $('.gps>.title>.heading').animate({ opacity: 1 }, { duration: 500, queue: false });
+                 $('.gps>.title>.heading').animate({ paddingLeft: "0px" }, { duration: 500, queue: false });
+               }
+
+               function runSection6() {
+                 window.hasRun6 = true;
+                 $('.fom-card').animate({ opacity: 1 }, { duration: 500, queue: false });
+                 $('.fom-img>img').animate({ opacity: 1 }, { duration: 500, queue: false });
+                 $('.fom-img>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
+               }
 
 
-                $('.txt-app>img').animate({ opacity: 1 }, { duration: 500, queue: false });
-                $('.txt-app>img').animate({ paddingTop: "0px" }, { duration: 500, queue: false });
 
-
-
-
-                window.hasRun5 = true;
-                $('.gps>.title>.heading').animate({ opacity: 1 }, { duration: 500, queue: false });
-                $('.gps>.title>.heading').animate({ paddingLeft: "0px" }, { duration: 500, queue: false });
 
 
   })
