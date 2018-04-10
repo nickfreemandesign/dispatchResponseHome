@@ -14,7 +14,7 @@ gulp.task('minify-html', function () {
 });
 
 gulp.task('minify-css', function () {
-    gulp.src(['src/css/font-styles.css','src/css/onepage-scroll.css','src/css/styles.css'])
+    gulp.src(['src/css/font-styles.css','src/css/styles.css'])
     .pipe(sourceMaps.init())
     .pipe(concat('output.css'))
     .pipe(gulp.dest('compile/'))
@@ -24,7 +24,7 @@ gulp.task('minify-css', function () {
 });
 
 gulp.task('minify-js', function () {
-    gulp.src(['src/js/jquery-3.3.1.min.js','src/js/jquery.onepage-scroll.min.js','src/js/functions.js'])
+    gulp.src(['src/js/jquery-3.3.1.min.js','src/js/functions.js'])
     .pipe(sourceMaps.init())
     .pipe(concat('output.js'))
     .pipe(gulp.dest('compile/'))
@@ -33,4 +33,4 @@ gulp.task('minify-js', function () {
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', ['minify-js', 'minify-css', 'minify-html']);
+gulp.task('default', ['minify-js', 'minify-css']);
