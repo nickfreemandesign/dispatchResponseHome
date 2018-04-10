@@ -477,6 +477,7 @@ section.about{
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: 1fr;
+  margin: 20%;
 }
 
 .about-emoji > div > div > img {
