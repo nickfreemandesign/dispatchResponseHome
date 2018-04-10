@@ -10,8 +10,21 @@ path#inner-ring{
   opacity: 0;
 }
 
+div.main{
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'logo '
+                       'about'
+                       'aag  '
+                       'feat '
+                       'gps  '
+                       'fom  ';
+}
+
 
 .cta{
+  grid-area: logo;
   background-color: white;
   display: grid;
   grid-template-columns: 1fr;
@@ -55,12 +68,12 @@ svg#logo{
 }
 
 .at-a-glance{
+  grid-area: aag;
   width: 100vw;
   height: 100vh;
 }
 
 .aag-container{
-  grid-area: smpl;
   display: grid;
   width: 100vw;
   height: 85vh;
@@ -290,7 +303,9 @@ rect.ima-rect{
 }
 
 section.about{
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  grid-area: about;
 }
 
 .about-container{
@@ -472,7 +487,7 @@ i {
 
 
 .features{
-  grid-area: svc;
+  grid-area: feat;
   display: grid;
   width: 100%;
   height: 95vh;
@@ -494,7 +509,6 @@ i {
 
 @media only screen and (max-width: 600px){
   .features{
-    grid-area: svc;
     background-color: white;
     display: grid;
     width: 100%;
@@ -572,7 +586,7 @@ i {
 
 
 .gps{
-  grid-area: tem;
+  grid-area: gps;
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -633,6 +647,7 @@ i {
 }
 
 .find-out-more{
+  grid-area: fom;
   display: flex;
   height: 100vh;
   width: 100vw;
